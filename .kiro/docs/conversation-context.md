@@ -27,3 +27,11 @@ inclusion: auto
 - 新增 `scripts/pre-push.sh`（裁剪 ML 版，保留通用+AI专属检查），安装为 `.git/hooks/pre-push`
 - 复制 `README-sync.md` 到 `.kiro/sh/`，`commit-conventions.md` 补"技术保障"章节
 - 确认 kiro-agents sync.sh 已注册 ai-forge
+
+#### self-evolving-rules.md 初始化
+
+- 为项目级 `self-evolving-rules.md` 建立完整规则体系
+- 新增提取时机（含 AI 项目特有 6 种场景）+ 提取流程 5 步 + 格式定义
+- 7 个分类框架：GPU/显存、API 调用、模型管理、量化与微调、Serving、训练、实验管理
+- 从 code-review / quick-reference / README / executor 提取 22 条种子规则（R-001 ~ R-022）
+- 预留失败模式记录区（F-XXX），后续从实际错误中学习

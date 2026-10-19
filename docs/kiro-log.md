@@ -23,3 +23,7 @@
   - 裁剪 Media-Library 版：去掉数据库/db_images/云盘专属检查，保留文档同步/.kiro 未提交/敏感文件/kiro-agents 自动同步，新增 AI 专属项（模型权重误入库、notebook 未清输出）。
 - [决策] 复制通用 `README-sync.md` 到 `.kiro/sh/`，在 `commit-conventions.md` 补充"技术保障（pre-push hook）"章节。
 - [已解决] 确认 kiro-agents sync.sh 已注册 ai-forge。
+
+### 2026-10-19 21:13
+
+- [决策] 初始化项目级 `self-evolving-rules.md`，建立 7 个分类框架 + 22 条种子规则（R-001~R-022），从 code-review / quick-reference / README / executor 中提取 AI 专属约束作为初始规则。种子规则标注"初始化提取"来源，与后续实际踩坑产生的规则区分。
