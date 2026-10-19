@@ -41,3 +41,13 @@ inclusion: auto
 - 在 todo.md 中建立五阶段学习计划，共 20 个任务（T-001~T-020）
 - P1 阶段一 7 项（API 调用）、P2 阶段二/三 7 项（本地部署+工具）、P3 阶段四/五 6 项（量化微调+训练）
 - 明天从 T-001（配置骨架）开始
+
+#### 碎片化学习指南
+
+- 创建 `.kiro/docs/misc/fragmented-learning-guide.md`，覆盖设备场景 / 时间策略 / 阶段资源 / 知识同步闭环
+
+#### dialogs/current.md 同步遗漏修复
+
+- 补全 21:12~21:23 遗漏的 5 轮对话记录
+- 新增 R-023 [对话] 实时同步规则 + F-001 失败模式
+- kiro-usage.md 新增「⚠️ dialogs/current.md 实时写入」专节，含摘要 vs 明细的粒度区分示例

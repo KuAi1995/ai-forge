@@ -121,7 +121,12 @@ inclusion: auto
 - **R-022** [实验] notebook 提交前必须清理输出（`jupyter nbconvert --clear-output`），避免大 diff 和敏感输出（API key / token / 模型权重片段）泄露。
   来源：commit-conventions + quick-reference 初始化提取。
 
+### 对话记录
+
+- **R-023** [对话] 每轮对话交互完成后，必须立即追加记录到 `dialogs/current.md`，与 `conversation-context.md` 同步写入，不可事后补。遗漏会导致对话明细丢失，无法完整复盘。
+  来源：2026-10-19 连续 4 轮对话未写入 dialogs/current.md，被用户指出。
+
 ## 失败模式记录
 
-<!-- 格式：F-XXX [分类] 描述。来源：日期/场景 -->
-<!-- 项目推进过程中从实际错误中学习，追加到此 -->
+- **F-001** [对话] 连续多轮对话遗漏 dialogs/current.md 写入：只更新了 conversation-context.md 而忘记同步 dialogs/current.md。根因是两个文件写入时机相同但容易只记住一个。
+  来源：2026-10-19，21:12~21:22 共 4 轮对话全部遗漏。

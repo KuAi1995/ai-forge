@@ -86,6 +86,34 @@ kiro-cli chat --trust-all-tools --model claude-opus-4.6
 - 每个功能 commit 中同时包含：代码 + 文档（README/progress/requirements）+ kiro-log + agent 变更（如有）
 - commit 遵循 `<type>(<scope>): <subject>` 格式，scope 对应阶段：api/serving/tools/training/pretrain/docs
 
+### ⚠️ dialogs/current.md 实时写入（不可遗漏）
+
+**每轮对话交互完成后**，必须同时写入两个文件：
+
+1. **`conversation-context.md`** — 事件维度**摘要**
+   - 只记"做了什么 + 结果"，一两句话概括
+   - 用于恢复上下文，不需要还原对话过程
+   - 格式：`#### 主题` → 操作摘要 + commit hash
+   ```markdown
+   #### 初始化 self-evolving-rules
+   - 建立 7 个分类框架 + 22 条种子规则（R-001~R-022），从 code-review/quick-reference 提取
+   ```
+
+2. **`dialogs/current.md`** — 对话维度**明细**
+   - 记用户原话摘要 + AI 具体操作和结果，可还原对话过程
+   - 用于完整复盘，比 context 更详细
+   - 格式：`### HH:MM — 主题` → `**用户**：原话` → `**AI**：操作+结果` → `**提交**：hash`
+   ```markdown
+   ### 21:13 — 初始化 self-evolving-rules
+   - **用户**：self-evolving-rules 先建立一下
+   - **AI**：重写 self-evolving-rules.md，建立 7 个分类框架 + 22 条种子规则...
+   - **提交**：8d7811b
+   ```
+
+两者写入时机相同，缺一不可。不可"事后补"或"攒到提交时再写"。
+
+> 失败教训（F-001）：2026-10-19 连续 4 轮只更新了 conversation-context.md 而遗漏 dialogs/current.md，被用户指出。根因是两个文件容易只记住一个。
+
 ## 结束对话流程
 
 详见 [`executor.md`](executor.md) 的"结束对话完整流程"章节，6 步执行：
