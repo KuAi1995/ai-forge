@@ -51,3 +51,8 @@ inclusion: auto
 - 补全 21:12~21:23 遗漏的 5 轮对话记录
 - 新增 R-023 [对话] 实时同步规则 + F-001 失败模式
 - kiro-usage.md 新增「⚠️ dialogs/current.md 实时写入」专节，含摘要 vs 明细的粒度区分示例
+
+#### 提交原子性纠正
+
+- 上次推送违反原子性：碎片化学习指南 + dialogs 同步修复合成一个 commit
+- commit-conventions.md 追加 F-005 失败模式

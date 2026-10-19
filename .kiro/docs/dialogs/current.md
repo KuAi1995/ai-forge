@@ -54,3 +54,7 @@
 ### 21:24 — 强化两文件粒度区分
 - **用户**：指出 conversation-context 和 dialogs/current 要区分摘要和明细
 - **AI**：重写 kiro-usage.md 的「⚠️ dialogs/current.md 实时写入」章节，用具体示例说明两个文件的粒度差异：context 只记结果摘要，dialogs 记用户原话+AI 操作过程。
+
+### 21:27 — 提交原子性纠正
+- **用户**：指出不应在推送时把所有变更合成一个 commit，应保证原子性
+- **AI**：承认错误。碎片化学习指南和 dialogs 同步修复是两件独立的事，应分两个 commit。在 commit-conventions.md 追加 F-005 失败模式记录。
