@@ -1,0 +1,51 @@
+# ── Python ──────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+
+# ── 模型文件 ────────────────────────────
+models/
+*.bin
+*.safetensors
+*.gguf
+*.ggml
+*.pt
+*.pth
+*.onnx
+
+# ── 数据集 ──────────────────────────────
+data/
+
+# ── 配置（敏感信息）────────────────────
+configs/*.yaml
+configs/*.yml
+configs/*.json
+!configs/*.example.*
+
+# ── IDE ─────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Jupyter ─────────────────────────────
+.ipynb_checkpoints/
+
+# ── 日志与缓存 ──────────────────────────
+*.log
+.cache/
+wandb/
+outputs/
+runs/
+
+# ── 系统文件 ────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Docker ──────────────────────────────
+.docker/
