@@ -1,0 +1,31 @@
+{
+  "python": {
+    "command": "pyright-langserver --stdio",
+    "filetypes": ["py"],
+    "project_files": ["pyproject.toml", "setup.py", "setup.cfg", "requirements.txt"],
+    "initialization_options": {
+      "python.analysis.autoSearchPaths": true,
+      "python.analysis.useLibraryCodeForTypes": true,
+      "python.analysis.typeCheckingMode": "basic",
+      "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "warning",
+        "reportMissingModuleSource": "none"
+      }
+    },
+    "settings": {},
+    "timeout_seconds": 60,
+    "multi_workspace": false,
+    "exclude_directories": [
+      "node_modules",
+      ".git",
+      "__pycache__",
+      "dist",
+      "build",
+      ".venv",
+      "venv",
+      ".ipynb_checkpoints",
+      "data",
+      "models"
+    ]
+  }
+}
