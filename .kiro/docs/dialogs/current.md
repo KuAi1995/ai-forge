@@ -38,10 +38,19 @@
 - **AI**：重写 `self-evolving-rules.md`，建立 7 个分类框架 + 22 条种子规则（R-001~R-022）。分类：GPU/显存、API 调用、模型管理、量化微调、Serving、训练、实验管理。种子规则从 code-review/quick-reference/README 提取，标注"初始化提取"来源。
 - **提交**：`8d7811b` docs(kiro): 初始化 self-evolving-rules 规则体系
 
+### 21:15 — 推送 self-evolving-rules
+- **用户**：提交推送
+- **AI**：文档检查（README/progress/requirements 无需变更），更新 kiro-log，提交 `8d7811b`。首次 `git push` 失败（Connection closed by port 443），SSH 测试正常，判断瞬时网络抖动，重试成功。
+- **提交**：`8d7811b` → push 成功
+
 ### 21:17 — 建立学习计划
 - **用户**：今天先到这吧，明天正式开始，先在 todo 里建立一个学习计划
 - **AI**：重写 `todo.md`，20 个任务（T-001~T-020）按五阶段排列：P1 阶段一 7 项、P2 阶段二/三 7 项、P3 阶段四/五 6 项。明天从 T-001 配置骨架开始。
 - **提交**：`0f1acb9` docs(kiro): 建立五阶段学习计划
+
+### 21:18 — 推送学习计划
+- **用户**：推送
+- **AI**：更新 conversation-context + kiro-log，提交 `0f1acb9`，推送成功。
 
 ### 21:20 — 碎片化学习方案
 - **用户**：如何利用碎片化时间进行相关学习（电脑不在身边或公司电脑不方便访问个人仓库）
@@ -55,6 +64,15 @@
 - **用户**：指出 conversation-context 和 dialogs/current 要区分摘要和明细
 - **AI**：重写 kiro-usage.md 的「⚠️ dialogs/current.md 实时写入」章节，用具体示例说明两个文件的粒度差异：context 只记结果摘要，dialogs 记用户原话+AI 操作过程。
 
+### 21:25 — 推送碎片化学习指南 + dialogs 修复
+- **用户**：推送
+- **AI**：更新 conversation-context + dialogs + kiro-log，提交 `a07667d` 推送成功。但违反原子性——碎片化学习指南和 dialogs 同步修复是两件独立的事，应分两个 commit。
+
 ### 21:27 — 提交原子性纠正
 - **用户**：指出不应在推送时把所有变更合成一个 commit，应保证原子性
 - **AI**：承认错误。碎片化学习指南和 dialogs 同步修复是两件独立的事，应分两个 commit。在 commit-conventions.md 追加 F-005 失败模式记录。
+- **提交**：`254af96` docs(kiro): 记录提交原子性失败模式 F-005
+
+### 21:28 — dialogs/current.md 对话不完整
+- **用户**：指出 dialogs/current.md 还不是完整对话，推送相关的交互轮次全部遗漏
+- **AI**：补全遗漏的 4 轮推送相关对话（21:15 推送失败重试、21:18 推送学习计划、21:25 推送违反原子性、21:27 推送原子性纠正）。
